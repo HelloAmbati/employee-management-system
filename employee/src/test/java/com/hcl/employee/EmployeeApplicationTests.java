@@ -1,13 +1,25 @@
-//package com.hcl.employee;
-//
-//import org.junit.jupiter.api.Test;
-//import org.springframework.boot.test.context.SpringBootTest;
-//
-//@SpringBootTest
-//class EmployeeApplicationTests {
-//
-//	@Test
-//	void contextLoads() {
-//	}
-//
-//}
+package com.hcl.employee;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.SpringApplication;
+
+class EmployeeApplicationTest {
+
+    @Test
+    void mainMethodShouldRunSuccessfully() {
+
+        assertDoesNotThrow(() ->
+                EmployeeApplication.main(new String[] {}));
+    }
+
+    @Test
+    void applicationClassShouldBeLoaded() {
+
+        EmployeeApplication application = new EmployeeApplication();
+
+        assertNotNull(application);
+    }
+}
